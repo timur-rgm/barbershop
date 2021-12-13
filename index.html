@@ -115,6 +115,7 @@
         * - приведённые данные ...
       </small>
     </section>
+
     <section class="advantages">
       <h2 class="visually-hidden">Наши преимущества</h2>
       <!-- Обвертка. Применили миксование: .advantages__wrapper для позиционирования, .slider для слайдера -->
@@ -180,6 +181,58 @@
         </div>
       <!-- .news__to-all для позиционирования внутри блока, а .button для описания внешнего вида. Использован универсальный класс .button, т.к. кнопка повторяется в макете в других местах. Согласно т/з эта кнопка ведёт на страницу со всеми новостями -->
       <a class="news__to-all button" href="#">Показать все</a>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <div class="reviews__wrapper slider">
+        <h2 class="reviews__title">Отзывы о нас</h2>
+        <a class="reviews__write button" href="form.html">Оставить свой</a>
+        <!-- Список отзывов - часть слайдера -->
+        <div class="reviews__list slider__list">
+          <!-- Каждый отзыв - это ещё и слайд -->
+          <blockquote class="reviews__item slider__item">
+            <img src="reviews__author-image" src="img/picture-travis-mobile@1x.jpg" width="50" height="33" alt="Фото Трэвиса Баркера">
+            <div class="reviews__author-info">
+              <cite class="reviews__author-name">
+                Трэвис Баркер
+              </cite>
+              <p class="reviews__text">
+                Спасибо за лысину! Был проездом в Москве, заскочил побриться.
+              </p>
+            </div>
+          </blockquote>
+          <blockquote class="reviews__item">
+            <img src="reviews__author-image" src="img/picture-travis-mobile@1x.jpg" width="50" height="33" alt="Фото Джона Смита">
+            <div class="reviews__author-info">
+             <cite class="reviews__author-name">
+                Джон Смит
+             </cite>
+             <p class="reviews__text">
+               Отличную стрижку сделали мне ребята.
+             </p>
+            </div>
+          </blockquote>
+          <blockquote class="reviews__item">
+            <img src="reviews__author-image" src="img/picture-travis-mobile@1x.jpg" width="50" height="33" alt="Фото Ивана Бородайло">
+            <div class="reviews__author-info">
+              <cite class="reviews__author-name">
+                Иван Бородайло
+             </cite>
+              <p class="reviews__text">
+               В Бородинском ваша борода в надёжных руках!
+              </p>
+            </div>
+          </blockquote>
+          <button class="reviews__prev" type="button">Предыдущий отзыв</button>
+          <button class="reviews__next" type="button">Следующий отзыв</button>
+        </div>
+        <!-- Кнопки переключения слайда. Позиционирование задаётся через .reviews__toogles -->
+        <p class="reviews__toogles slider__toogles">
+          <button class="slider__toogle slider__toogle--current" type="button">1</button>
+          <button class="slider__toogle" type="button">2</button>
+          <button class="slider__toogle" type="button">3</button>
+        </p>
       </div>
     </section>
 
