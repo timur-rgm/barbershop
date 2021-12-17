@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!-- .page указан для возможности управлять глобальными стилями -->
+<html class="page" lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Барбершоп «Бородинский»</title>
+</head>
+<body class="page__body">
+  <!-- Шапка повторяется на всех страницах, поэтому решили вынести в отдельный блок .page-header, а миксование не используем, т.к. нет нужды в позиционировании header -->
+  <header class="page-header">
+    <a class="page-header__logo">
+      <!-- класс пока не нужен -->
+      <img src="img/logotip.svg" width="226" height="30" alt="Логотип барбершопа «Бородинский»">
+    </a>
+    <!-- Не задали .page-header__main-nav, т.к. нам не нужно позиционирование - достаточно задать флексы в .page-header -->
+    <nav class="main-nav">
+      <!-- Кнопка выпадающего меню в мобильной версии -->
+      <button class="main-nav__toogle" type="button">
+        <!-- Для доступности -->
+        <span class="visually-hidden">Открыть меню</span>
+      </button>
+      <!-- Обвёртка для списков меню для центрирования меню -->
+      <div class="main-nav__wrapper">
+        <!-- Используем миксование: .main-nav__list отвечает за позиционирование, а .site-list делает список независимым блоком (его можно будет перенести) и задаёт стили -->
+        <ul class="main-nav__list site-list">
+          <!-- Модификатор активного пункта меню -->
+          <li class="site-list__item site-list__item--active">
+            <a>Главная</a>
+          </li>
+          <li class="site-list__item">
+            <a href="photo.html">Наши работы</a>
+          </li>
+          <li class="site-list__item">
+            <a href="form.html">Записаться</a>
+          </li>
+          <li class="site-list__item">
+            <a href="#">Контакты</a>
+          </li>
+          <li class="site-list__item">
+            <a href="#">Html acamedy</a>
+          </li>
+        </ul>
+        <ul class="main-nav__list user-list">
+          <li class="user-list__item">
+            <!-- Сделали ссылкой на случай не работы js, поэтому же добавили href -->
+            <a class="user-list__login js-login" href="login.html">Войти</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- .page__main нам не нужен, т.к. он для позиционирования -->
+  <main class="page-main">
+    <!-- Для доступности -->
+    <h1 class="visually-hidden">Барбершоп «Бородинский» - мужская классика</h1>
+    <section class="stats">
+      <header class="stats__header">
+        <h2 class="visually-hidden">Статистика барбершопа</h2>
+        <p class="stats__slogan">
+          Стрижка у нас<br>
+          это выгодно!</p>
+        <p class="stats__intro">
+          Мужская стрижка требует<br>
+          точного подхода. Обратимся<br>
+          к статистике:
+        </p>
+        <!-- Модификатор .stats__legend--top для показывания на не мобильных версиях -->
+        <p class="stats__legend stats__legend--top">
+          <small >
+            *&nbsp - приведённые данные ...
+          </small>
+        </p>
+      </header>
+      <dl class="stats__list">
+        <div class="stats__item">
+          <dt class="stats__number">
+            1 500<sup>*</sup>
+          </dt>
+          <dd class="stats__description">
+            рублей<br>
+            вложений
+          </dd>
+        </div>
+        <div class="stats__item">
+          <dt class="stats__number">
+            7 200
+          </dt>
+          <dd class="stats__description">
+            секунд<br>
+            времени мастера
+          </dd>
+        </div>
+        <div class="stats__item">
+          <dt class="stats__number">
+            90 000
+          </dt>
+          <dd class="stats__description">
+            постриженных<br>
+            волос
+          </dd>
+        </div>
+        <div class="stats__item">
+          <dt class="stats__number">
+            500 000<sup>*</sup>
+          </dt>
+          <dd class="stats__description">
+            лайков и<br>
+            комплиментов
+          </dd>
+        </div>
+      </dl>
+      <!-- Модификатор .stats__legend--bottom для скрытия на не мобильных версиях -->
+      <small class="stats__legend stats__legend--bottom">
+        * - приведённые данные ...
+      </small>
+    </section>
+
+    <section class="advantages">
+      <h2 class="visually-hidden">Наши преимущества</h2>
+      <!-- Обвертка. Применили миксование: .advantages__wrapper для позиционирования, .slider для слайдера -->
+      <div class="advantages__wrapper slider">
+        <ul class="advantages__list slider__list">
+          <!-- Модификатор .advantages__item--fast для разных картинок -->
+         <li class="advantages__item advantages__item--fast slider__item">
+            <h3 class="advantages__title">
+             Быстро
+           </h3>
+           <p  class="advantages__description">
+              Мы делаем свою работу быстро! Два часа пролетят незаметно и Вы - счастливый обладатель стильной стрижки-минутки
+            </p>
+          </li>
+          <li class="advantages__item advantages__item--cool slider__item">
+            <h3 class="advantages__title">
+              Круто
+            </h3>
+            <p  class="advantages__description">
+              Забудьте, как вы стриглись раньше. Мы пострегём вас отлично.
+           </p>
+         </li>
+         <li class="advantages__item advantages__item--price slider__item">
+           <h3 class="advantages__title">
+              Дорого
+           </h3>
+            <p  class="advantages__description">
+             Наши мастера - профессионалы своего дела и не могут стоить дёшево. К тому же, разве цена не даёт определённый статус?
+            </p>
+          </li>
+        </ul>
+        <!-- Кнопки слайдера. Не относятся в блоку преимуществ, однако позиционируем с помощью .advantages__toogles-->
+        <p class="advantages__toogles slider__toogles">
+          <!-- .slider__toogle--current - модификатор активной кнопки слайдера -->
+          <button class="slider__toogle slider__toogle--current" type="button">1</button>
+          <button class="slider__toogle" type="button">2</button>
+          <button class="slider__toogle" type="button">3</button>
+        </p>
+      </div>
+    </section>
+
+    <section class="news">
+      <!-- Для центрирования -->
+      <div class="news__wrapper">
+        <h2 class="news__title">Новости и акции</h2>
+        <div class="news__list">
+          <a class="news__item" href="#">
+            <time class="news__date" datetime="2017-09-29">
+              <b class="news__day">29</b> сент
+            </time>
+            <p class="news__text">
+              Нам наконец завезли фрэши. Теперь вы можете выпить стаканчик полезного сока во время стрижки.
+            </p>
+          </a>
+         <a class="news__item" href="#">
+           <time class="news__date" datetime="2017-09-19">
+              <b class="news__day">19</b> сент
+           </time>
+           <p class="news__text">
+             В нашей команде пополнение, Борис «Бритва» Стригунец, обладатель множества титулов и наград пополнил наши стройные ряды. Спешите записаться!
+           </p>
+          </a>
+        </div>
+      <!-- .news__to-all для позиционирования внутри блока, а .button для описания внешнего вида. Использован универсальный класс .button, т.к. кнопка повторяется в макете в других местах. Согласно т/з эта кнопка ведёт на страницу со всеми новостями -->
+      <a class="news__to-all button" href="#">Показать все</a>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <div class="reviews__wrapper slider">
+        <h2 class="reviews__title">Отзывы о нас</h2>
+        <a class="reviews__write button" href="form.html">Оставить свой</a>
+        <!-- Список отзывов - часть слайдера -->
+        <div class="reviews__list slider__list">
+          <!-- Каждый отзыв - это ещё и слайд -->
+          <blockquote class="reviews__item slider__item">
+            <img src="reviews__author-image" src="img/picture-travis-mobile@1x.jpg" width="50" height="33" alt="Фото Трэвиса Баркера">
+            <div class="reviews__author-info">
+              <cite class="reviews__author-name">
+                Трэвис Баркер
+              </cite>
+              <p class="reviews__text">
+                Спасибо за лысину! Был проездом в Москве, заскочил побриться.
+              </p>
+            </div>
+          </blockquote>
+          <blockquote class="reviews__item">
+            <img src="reviews__author-image" src="img/picture-travis-mobile@1x.jpg" width="50" height="33" alt="Фото Джона Смита">
+            <div class="reviews__author-info">
+             <cite class="reviews__author-name">
+                Джон Смит
+             </cite>
+             <p class="reviews__text">
+               Отличную стрижку сделали мне ребята.
+             </p>
+            </div>
+          </blockquote>
+          <blockquote class="reviews__item">
+            <img src="reviews__author-image" src="img/picture-travis-mobile@1x.jpg" width="50" height="33" alt="Фото Ивана Бородайло">
+            <div class="reviews__author-info">
+              <cite class="reviews__author-name">
+                Иван Бородайло
+             </cite>
+              <p class="reviews__text">
+               В Бородинском ваша борода в надёжных руках!
+              </p>
+            </div>
+          </blockquote>
+          <button class="reviews__prev" type="button">Предыдущий отзыв</button>
+          <button class="reviews__next" type="button">Следующий отзыв</button>
+        </div>
+        <!-- Кнопки переключения слайда. Позиционирование задаётся через .reviews__toogles -->
+        <p class="reviews__toogles slider__toogles">
+          <button class="slider__toogle slider__toogle--current" type="button">1</button>
+          <button class="slider__toogle" type="button">2</button>
+          <button class="slider__toogle" type="button">3</button>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <!-- Для центрирования -->
+    <div class="page-footer__wrapper">
+      <div class="page-footer__contacts contacts">
+        <b class="contacts__title">Барбершоп Бородинский</b>
+        <p class="contacts__text">
+          г. Санкт-Петербург, ул. Большая Конюшенная 19/8<br>
+          <a class="contacts__phone" href="tel:+78125556666"></a>
+          <span class="contacts__phone-mobile">Тел.:</span> +7 (812) 555-66-66
+        </p>
+      </div>
+      <div class="page-footer__social social">
+        <b>Мы в соцсетях:</b>
+        <ul class="social__list">
+          <li class="social__item">
+            <a class="social__link social__link--vkontakte" href="https://vk.com/barbershop">Мы вконтакте</a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--facebook" href="https://facebook.com/barbershop">Мы в Фейсбуке</a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--instagram" href="https://instagram.com/barbershop">Мы в Инстаграме</a>
+          </li>
+        </ul>
+      </div>
+      <div class="page-footer__copyright copyright">
+        <b class="copyright__text">Разработано:</b>
+        <!-- Можно в классе ссылки прописать ещё "button button--copyright" -->
+        <a class="copyright__link" href="https://htmlacademy.ru">Html academy</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
